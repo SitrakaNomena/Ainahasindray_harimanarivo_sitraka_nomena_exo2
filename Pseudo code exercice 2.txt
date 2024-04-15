@@ -1,0 +1,44 @@
+Fonction generer_table_verite(fonction_logique):
+    table_verite = []
+    variables = extraire_variables(fonction_logique)
+    combinaisons = generer_combinaisons(variables)
+    Pour chaque combinaison dans combinaisons:
+        resultat = evaluer_fonction(fonction_logique, combinaison)
+        table_verite.ajouter(combinaison + [resultat])
+    retourner table_verite
+
+Fonction extraire_variables(fonction_logique):
+    variables = []
+    Pour chaque caractère dans fonction_logique:
+        Si caractère est une variable et n'est pas déjà dans variables:
+            variables.ajouter(caractère)
+    retourner variables
+
+Fonction generer_combinaisons(variables):
+    combinaisons = []
+    Pour chaque variable dans variables:
+        Si combinaisons est vide:
+            combinaisons = [[variable]]
+        Sinon:
+            nouvelles_combinaisons = []
+            Pour chaque combinaison dans combinaisons:
+                Pour chaque valeur dans [0, 1]:
+                    nouvelles_combinaisons.ajouter(combinaison + [valeur])
+            combinaisons = nouvelles_combinaisons
+    retourner combinaisons
+
+Fonction evaluer_fonction(fonction_logique, combinaison):
+    Sousstituer les valeurs des variables dans fonction_logique avec les valeurs correspondantes dans combinaison
+    retourner le résultat de l'évaluation de la fonction logique
+
+Fonction generer_table_karnaugh(table_verite):
+    // Implementation dépendante de la taille de la table de vérité
+
+Fonction simplifier_expression(fonction_logique, table_karnaugh):
+    // Utiliser la table de Karnaugh pour simplifier l'expression logique
+
+// Exemple d'utilisation
+fonction_logique = "((A and B) and (not C)) or ((not A) and B and (not C)"
+table_verite = generer_table_verite(fonction_logique)
+table_karnaugh = generer_table_karnaugh(table_verite)
+expression_simplifiee = simplifier_expression(fonction_logique, table_karnaugh)
