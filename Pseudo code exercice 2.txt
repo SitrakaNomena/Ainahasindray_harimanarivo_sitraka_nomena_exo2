@@ -38,7 +38,7 @@ Fonction simplifier_expression(fonction_logique, table_karnaugh):
     // Utiliser la table de Karnaugh pour simplifier l'expression logique
 
 // Exemple d'utilisation
-fonction_logique = "((A and B) and (not C)) or ((not A) and B and (not C)"
+fonction_logique = saisir le fonction logique
 table_verite = generer_table_verite(fonction_logique)
 table_karnaugh = generer_table_karnaugh(table_verite)
 expression_simplifiee = simplifier_expression(fonction_logique, table_karnaugh)
